@@ -1,6 +1,7 @@
 pub mod components;
 pub mod pages;
 pub mod router;
+pub mod not_found;
 
 use crate::app::router::AppRouter;
 use leptos::prelude::*;

@@ -1,8 +1,8 @@
-use leptos::{ev::MouseEvent, prelude::*};
+use leptos::{ev::MouseEvent, logging::log, prelude::*};
 use leptos_router::components::A;
 
 #[component]
-pub fn Sidebar(on_close: impl FnMut(MouseEvent) + Clone + 'static) -> impl IntoView {
+pub fn Sidebar(#[prop(into)] on_close: Callback<()>) -> impl IntoView {
     view! {
         <ul class="menu bg-base-200 min-h-full w-72 space-y-6 ">
             <div class="avatar mt-12 self-center">
@@ -38,32 +38,32 @@ pub fn Sidebar(on_close: impl FnMut(MouseEvent) + Clone + 'static) -> impl IntoV
                     <h2 class="menu-title">Sections</h2>
                     <ul>
                         <li>
-                            <A href="home#about_section" on:click=on_close.clone()>
+                            <A href="home#about_section" on:click=move |_| on_close.run(())>
                                 About
                             </A>
                         </li>
                         <li>
-                            <A href="home#skill_section" on:click=on_close.clone()>
+                            <A href="home#skill_section" on:click=move |_| on_close.run(())>
                                 Skills
                             </A>
                         </li>
                         <li>
-                            <A href="home#background_section" on:click=on_close.clone()>
+                            <A href="home#background_section" on:click=move |_| on_close.run(())>
                                 Background
                             </A>
                         </li>
                         <li>
-                            <A href="home#portfolio_section" on:click=on_close.clone()>
+                            <A href="home#portfolio_section" on:click=move |_| on_close.run(())>
                                 Portfolio
                             </A>
                         </li>
                         <li>
-                            <A href="home#services_section" on:click=on_close.clone()>
+                            <A href="home#services_section" on:click=move |_| on_close.run(())>
                                 Services
                             </A>
                         </li>
                         <li>
-                            <A href="home#contact_section" on:click=on_close.clone()>
+                            <A href="home#contact_section" on:click=move |_| on_close.run(())>
                                 Contacts
                             </A>
                         </li>
@@ -71,12 +71,12 @@ pub fn Sidebar(on_close: impl FnMut(MouseEvent) + Clone + 'static) -> impl IntoV
                 </li>
 
                 <li>
-                    <A href="projects" on:click=on_close.clone()>
+                    <A href="projects" on:click=move |_| on_close.run(())>
                         Projects
                     </A>
                 </li>
                 <li>
-                    <A href="blogs" on:click=on_close.clone()>
+                    <A href="blogs" on:click=move |_| on_close.run(())>
                         Blogs
                     </A>
                 </li>
