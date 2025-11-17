@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: winter --default, night --prefersdark;
+}
+@theme {
+  --font-sans: "JetBrains Mono", sans-serif;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+    @apply scrollbar-hide;
+  }
+}
+
+@utility scrollbar-hide {
+  /* Firefox */
+  scrollbar-width: none;
+
+  /* IE and Edge */
+  -ms-overflow-style: none;
+
+  /* Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility scrollbar-default {
+  /* Firefox */
+  scrollbar-width: auto;
+
+  /* IE and Edge */
+  -ms-overflow-style: auto;
+
+  /* Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: block;
+  }
+}
+
+/* :root {
+  --background-rgb: 214, 219, 220;
+  --foreground-rgb: 0, 0, 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-rgb: 0, 0, 0;
+    --foreground-rgb: 255, 255, 255;
+  }
+} */
+
+/* This changes all the animations globally */
+:root {
+  --animate-duration: 1000ms;
+  --animate-delay: 500ms;
+}
+
+/* 
+body {
+  background: rgb(var(--background-rgb));
+  color: rgb(var(--foreground-rgb));
+} */
